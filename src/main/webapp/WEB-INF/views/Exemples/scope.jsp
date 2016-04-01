@@ -7,16 +7,16 @@
         <title>Streaming</title>
         <link href="<c:url value="/CSS/style1.css"/>" rel="stylesheet" type="text/css"/>
         <script src="<c:url value="/JS/angular.js"/>" type="text/javascript"></script>
-        <script src="<c:url value="/JS/app.js"/>" type="text/javascript"/></script>
+        <script type="text/javascript">
+            var app = angular.module("monApp", []);
+            
+            app.controller("monControleur", ["$scope", function($scope){
+                    
+                    $scope.titre = "Bienvenue sur ma mage";
+            }]);
+        </script>
     </head>
-    <body ng-controller="menuController">
-        <div class="menu"> 
-            <c:import url="_MENU.jsp" />
-        </div>
-        <div class="content" ng-include="'<c:url value="/"/>' + contentRoute"> 
-        </div>
-        <div class="footer">
-            <c:import url="_FOOTER.jsp"/>
-        </div>
+    <body ng-controller="monControleur">
+        {{ titre }}
     </body>
 </html>

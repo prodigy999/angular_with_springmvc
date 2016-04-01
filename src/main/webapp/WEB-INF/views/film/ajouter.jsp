@@ -8,7 +8,7 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <h1>Nouveau film</h1>
 <div>
-    <form:form modelAttribute="film">
+    <form:form modelAttribute="film" ng-click="">
         <label for="titre">Titre</label>
         <form:input path="titre"/>
         <br>

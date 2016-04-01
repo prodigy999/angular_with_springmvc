@@ -26,6 +26,14 @@ public class FilmController {
     @Autowired
     private FilmCrudService filmCrudService;
     
+    @RequestMapping(value = "ajouter", method = RequestMethod.POST)
+    public String ajouterPOST(Film film){
+        
+        filmCrudService.save(film);
+        
+        return "redirect:/film/lister";
+    }
+    
     @RequestMapping(value = "ajouter", method = RequestMethod.GET)
     public String ajouter(Model model){
         
